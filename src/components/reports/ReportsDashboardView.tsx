@@ -62,12 +62,12 @@ export default function ReportsDashboardView({
                 <th className="px-4 py-4 text-center text-xs font-bold uppercase tracking-wider text-zinc-300">
                   Total
                 </th>
-                <th className="px-4 py-4 text-center text-xs font-bold uppercase tracking-wider text-emerald-400">
+                {/* <th className="px-4 py-4 text-center text-xs font-bold uppercase tracking-wider text-emerald-400">
                   Activos
                 </th>
                 <th className="px-4 py-4 text-center text-xs font-bold uppercase tracking-wider text-zinc-300">
                   Inactivos
-                </th>
+                </th> */}
                 <th className="px-4 py-4 text-center text-xs font-bold uppercase tracking-wider text-amber-400">
                   Libres
                 </th>
@@ -100,7 +100,7 @@ export default function ReportsDashboardView({
 
               {!isLoading &&
                 groups.map((g, index) => {
-                  const activePercentage = g.total ? Math.round((g.active / g.total) * 100) : 0;
+                  const activePercentage = g.total ? Math.round((g.occupied / g.total) * 100) : 0;
                   
                   return (
                     <tr
@@ -150,18 +150,18 @@ export default function ReportsDashboardView({
                       </td>
 
                       {/* Activos */}
-                      <td className="px-4 py-5 text-center">
+                      {/* <td className="px-4 py-5 text-center">
                         <div className="inline-flex items-center justify-center rounded-lg bg-emerald-500/10 px-3 py-1.5 font-mono text-sm font-bold text-emerald-300 ring-1 ring-emerald-500/20">
                           {g.free}
                         </div>
-                      </td>
+                      </td> */}
 
                       {/* Inactivos */}
-                      <td className="px-4 py-5 text-center">
+                      {/* <td className="px-4 py-5 text-center">
                         <div className="inline-flex items-center justify-center rounded-lg bg-zinc-700/20 px-3 py-1.5 font-mono text-sm font-bold text-zinc-400 ring-1 ring-zinc-600/20">
                           {g.inactive}
                         </div>
-                      </td>
+                      </td> */}
 
                       {/* Libres */}
                       <td className="px-4 py-5 text-center">
@@ -177,7 +177,7 @@ export default function ReportsDashboardView({
                         </div>
                       </td>
 
-                      {/* Porcentaje Activo */}
+                      {/* Porcentaje Ocupado */}
                       <td className="px-4 py-5 text-center">
                         <div className="flex flex-col items-center gap-2">
                           <span className="font-mono text-base font-bold text-zinc-100">
@@ -242,18 +242,18 @@ export default function ReportsDashboardView({
             </div>
             <div className="h-4 w-px bg-white/10" />
             <div className="flex items-center gap-2">
-              <span className="text-zinc-500">Equipos activos:</span>
+              <span className="text-zinc-500">Equipos ocupados:</span>
               <span className="font-mono text-base font-bold text-emerald-300">
-                {groups.reduce((sum, g) => sum + g.active, 0).toLocaleString()}
+                {groups.reduce((sum, g) => sum + g.occupied, 0).toLocaleString()}
               </span>
             </div>
           </div>
           <div className="flex items-center gap-2 rounded-lg bg-emerald-500/10 px-4 py-2 ring-1 ring-emerald-500/20">
-            <span className="text-xs font-medium text-zinc-400">Promedio activo:</span>
+            <span className="text-xs font-medium text-zinc-400">Promedio ocupado:</span>
             <span className="font-mono text-lg font-black text-emerald-300">
               {groups.length > 0
                 ? Math.round(
-                    (groups.reduce((sum, g) => sum + g.active, 0) / 
+                    (groups.reduce((sum, g) => sum + g.occupied, 0) / 
                     groups.reduce((sum, g) => sum + g.total, 0)) * 100
                   )
                 : 0}

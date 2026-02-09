@@ -64,7 +64,7 @@ export default function LocationSelector({ selected, onSelectLocation }: Props) 
                   </span>
                   <span className="text-zinc-600">·</span>
                   <span className="text-emerald-300">
-                    {loc.active} activos
+                    {loc.occupied} ocupados
                   </span>
                 </div>
               </div>

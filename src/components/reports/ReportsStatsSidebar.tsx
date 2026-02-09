@@ -76,9 +76,9 @@ export default function ReportsStatsSidebar({
         <CardBody className="gap-3 px-4 pb-4 pt-3">
           <div className="grid grid-cols-2 gap-3">
             <StatPill label="Equipos (total)" value={totals.total} />
-            <StatPill label="Activos" value={totals.active} />
-            <StatPill label="Inactivos" value={totals.inactive} />
+            <StatPill label="Ocupados" value={totals.occupied} />
             <StatPill label="Libres" value={totals.free} />
+            <StatPill label="Porcentaje ocupado" value={`${totals.total ? Math.round((totals.occupied / totals.total) * 100) : 0}%`} />
           </div>
         </CardBody>
       </Card>
@@ -128,7 +128,7 @@ export default function ReportsStatsSidebar({
               <div className="min-w-0">
                 <div className="truncate text-sm font-semibold">{g.name}</div>
                 <div className="mt-1 text-[11px] text-zinc-400">
-                  Total {g.total} · Activos {g.active} · Inactivos {g.inactive}
+                  Total {g.total} · Ocupados {g.occupied} · Libres {g.free}
                 </div>
               </div>
               <Chip size="sm" variant="flat" color="success" className="shrink-0">

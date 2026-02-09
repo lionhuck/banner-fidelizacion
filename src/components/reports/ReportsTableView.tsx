@@ -100,12 +100,6 @@ export default function ReportsTableView({
               </TableColumn>
               <TableColumn>
                 <div className="flex items-center gap-1.5">
-                  <Hash className="h-3.5 w-3.5" />
-                  UID
-                </div>
-              </TableColumn>
-              <TableColumn>
-                <div className="flex items-center gap-1.5">
                   <Wifi className="h-3.5 w-3.5" />
                   MACs
                 </div>
@@ -158,12 +152,11 @@ export default function ReportsTableView({
                     {/* Estado */}
                     <TableCell>
                       <div className="flex flex-wrap items-center gap-1.5">
-                        {active ? (
-                          <Badge tone="ok">✓ Activo</Badge>
+                        {r.libre ? (
+                          <Badge tone="muted">○ Libre</Badge>
                         ) : (
-                          <Badge tone="muted">○ Inactivo</Badge>
+                          <Badge tone="ok">✓ Ocupado</Badge>
                         )}
-                        {r.libre ? <Badge tone="warn">⚠ Libre</Badge> : null}
                       </div>
                     </TableCell>
 
@@ -209,14 +202,6 @@ export default function ReportsTableView({
                         )}
                       </div>
                     </TableCell>
-
-                    {/* UID */}
-                    <TableCell>
-                      <div className="max-w-[120px] truncate font-mono text-xs text-emerald-300">
-                        {r.uid ?? "-"}
-                      </div>
-                    </TableCell>
-
                     {/* MACs */}
                     <TableCell>
                       <div className="max-w-[160px] truncate font-mono text-xs text-blue-300">

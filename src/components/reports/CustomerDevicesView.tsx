@@ -35,6 +35,9 @@ export default function CustomerDevicesView({
     return `Equipos en ${location?.name ?? "ubicación seleccionada"}`;
   };
 
+  let reporte : ReportEntidadesEquipos[] = [];
+  reporte.push("hola")
+
   return (
     <div className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/60 shadow-xl backdrop-blur-sm">
       <div className="flex-1 overflow-auto p-6">

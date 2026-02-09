@@ -29,7 +29,7 @@ export function UserGroupDetailsDialog({
         <DialogHeader>
           <DialogTitle className="text-2xl">{group.name}</DialogTitle>
           <div className="text-sm text-muted-foreground">
-            Total: <b>{group.total}</b> · Activos: <b>{group.active}</b> · Inactivos: <b>{group.inactive}</b>
+            Total: <b>{group.total}</b> · Ocupados: <b>{group.occupied}</b> · Libres: <b>{group.free}</b>
           </div>
         </DialogHeader>
 

@@ -44,5 +44,4 @@ export type ReportEntidadesEquipos = {
   uid: string | null;
   ultima_conexion: string | null;
 
-  [k: string]: any;
 };

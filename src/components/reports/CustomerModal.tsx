@@ -52,16 +52,16 @@ export default function CustomerModal({
             
             <div className="mt-3 flex flex-wrap gap-2">
               <div className="flex items-center gap-2 rounded-lg bg-emerald-500/10 px-3 py-1.5 ring-1 ring-emerald-500/30">
-                <span className="text-xs text-zinc-500">Activos:</span>
-                <span className="font-mono text-sm font-bold text-emerald-300">{selected.free}</span>
+                <span className="text-xs text-zinc-500">Ocupados:</span>
+                <span className="font-mono text-sm font-bold text-emerald-300">{selected.occupied}</span>
               </div>
-              <div className="flex items-center gap-2 rounded-lg bg-zinc-700/20 px-3 py-1.5 ring-1 ring-zinc-600/30">
-                <span className="text-xs text-zinc-500">Inactivos:</span>
-                <span className="font-mono text-sm font-bold text-zinc-300">{selected.inactive}</span>
+              <div className="flex items-center gap-2 rounded-lg bg-red-700/20 px-3 py-1.5 ring-1 ring-red-600/30">
+                <span className="text-xs text-zinc-500">Libres:</span>
+                <span className="font-mono text-sm font-bold text-red-300">{selected.free}</span>
               </div>
-              <div className="flex items-center gap-2 rounded-lg bg-amber-500/10 px-3 py-1.5 ring-1 ring-amber-500/30">
-                <span className="text-xs text-amber-400">Libres:</span>
-                <span className="font-mono text-sm font-bold text-amber-300">{selected.free}</span>
+              <div className="flex items-center gap-2 rounded-lg bg-blue-500/10 px-3 py-1.5 ring-1 ring-blue-500/30">
+                <span className="text-xs text-zinc-400">Porcentaje ocupado:</span>
+                <span className="font-mono text-sm font-bold text-blue-300">{selected.total ? Math.round((selected.occupied / selected.total) * 100) : 0}%</span>
               </div>
             </div>
           </div>
